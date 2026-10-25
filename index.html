@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بتاع الورد | Bta3 El Ward</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--g:#8aae2e;--d:#1f3a1a;--soft:#eef4d8}
+*{box-sizing:border-box;margin:0}
+body{font-family:Cairo,sans-serif;color:#222;background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+header{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);box-shadow:0 2px 12px #0001}
+.logo{font-weight:900;font-size:22px;color:var(--g)}
+nav{display:flex;gap:22px;font-weight:700}nav a:hover{color:var(--g)}
+.tools{display:flex;gap:10px;align-items:center}
+.btn{background:var(--g);color:#fff;border:0;border-radius:30px;padding:10px 24px;font:700 15px Cairo;cursor:pointer;transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px #8aae2e66}
+.ic{background:var(--soft);border:0;border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:17px;position:relative}
+.ic b{position:absolute;top:-4px;inset-inline-end:-4px;background:#e74c3c;color:#fff;font-size:11px;border-radius:50%;width:18px;height:18px;line-height:18px}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;color:#fff;padding:100px 5% 40px;background:linear-gradient(#0008,#000a),url(images/hero.jpg) center/cover,linear-gradient(135deg,#1f3a1a,#4f7a1e)}
+.hero h1{font-size:clamp(30px,6vw,64px);font-weight:900;margin:14px 0 28px;animation:up 1s both}
+.hero p{font-size:22px;animation:up 1s .2s both}.hero .btn{animation:up 1s .4s both;font-size:18px;padding:14px 38px}
+@keyframes up{from{opacity:0;transform:translateY(40px)}}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;padding:60px 5%;text-align:center}
+.feat div{padding:24px;border-radius:18px;transition:.3s}.feat div:hover{background:var(--soft);transform:translateY(-6px)}
+.feat i{font-style:normal;font-size:34px;display:block;margin-bottom:8px}
+section{padding:60px 5%}h2{text-align:center;font-size:32px;margin-bottom:30px;font-weight:900}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:24px}
+.card{border-radius:18px;overflow:hidden;box-shadow:0 4px 18px #0001;transition:.35s;background:#fff}
+.card:hover{transform:translateY(-10px);box-shadow:0 16px 34px #0003}
+.card .im{height:230px;overflow:hidden;background:linear-gradient(135deg,var(--soft),#cfe39a);display:grid;place-items:center;font-size:70px}
+.card img{width:100%;height:100%;object-fit:cover;transition:.6s}.card:hover img{transform:scale(1.12) rotate(1deg)}
+.card .in{padding:14px;text-align:center}.card h3{font-size:16px;min-height:48px}.price{color:var(--g);font-weight:900;font-size:19px;margin:8px 0}
+.about{background:var(--soft);display:flex;gap:40px;justify-content:center;text-align:center;flex-wrap:wrap}
+.about b{font-size:42px;color:var(--g);display:block}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.rev div{background:#fff;padding:20px;border-radius:14px;box-shadow:0 4px 14px #0001;transition:.3s}.rev div:hover{transform:scale(1.04)}
+.pay{text-align:center;font-weight:900;color:#666;letter-spacing:1px}
+footer{background:var(--d);color:#fff;text-align:center;padding:30px}
+.rv{opacity:0;transform:translateY(40px);transition:1s}.rv.on{opacity:1;transform:none}
+.wa{position:fixed;bottom:22px;inset-inline-start:22px;z-index:30;background:#25d366;color:#fff;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:32px;box-shadow:0 6px 20px #25d36699;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #25d366aa}100%{box-shadow:0 0 0 22px #25d36600}}
+.bot{position:fixed;bottom:22px;inset-inline-end:22px;z-index:30;background:var(--g);color:#fff;border:0;width:62px;height:62px;border-radius:50%;font-size:28px;cursor:pointer;box-shadow:0 6px 20px #0004}
+.panel{position:fixed;z-index:40;background:#fff;box-shadow:0 10px 40px #0004;display:none;flex-direction:column}
+.panel.open{display:flex}
+#chat{bottom:96px;inset-inline-end:22px;width:min(340px,92vw);height:420px;border-radius:18px;overflow:hidden}
+#cartp{top:0;bottom:0;inset-inline-start:0;width:min(380px,100vw)}
+.ph{background:var(--g);color:#fff;padding:14px;font-weight:700;display:flex;justify-content:space-between}
+.pb{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{padding:9px 13px;border-radius:14px;max-width:85%;font-size:14px}.m.b{background:var(--soft)}.m.u{background:var(--g);color:#fff;align-self:flex-end}
+.pf{display:flex;gap:6px;padding:10px;border-top:1px solid #eee}.pf input{flex:1;padding:9px;border:1px solid #ddd;border-radius:20px;font:14px Cairo}
+.ci{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #eee;font-size:14px}
+@media(max-width:760px){nav{display:none}}
+</style></head><body>
+<header><div class="logo">🌿 بتاع الورد</div>
+<nav><a href="#top" data-i="home"></a><a href="#shop" data-i="shop"></a><a href="#about" data-i="about"></a><a href="#contact" data-i="contact"></a></nav>
+<div class="tools"><button class="ic" id="lang">EN</button><button class="ic" id="cb">🛒<b id="cc">0</b></button></div></header>
+
+<div class="hero" id="top"><div><p data-i="sub"></p><h1 data-i="h1"></h1><a href="#shop" class="btn" data-i="cta"></a></div></div>
+
+<div class="feat rv"><div><i>💳</i><h3 data-i="f1"></h3><p data-i="f1d"></p></div><div><i>🚚</i><h3 data-i="f2"></h3><p data-i="f2d"></p></div><div><i>📦</i><h3 data-i="f3"></h3><p data-i="f3d"></p></div><div><i>💚</i><h3 data-i="f4"></h3><p data-i="f4d"></p></div></div>
+
+<section id="shop"><h2 data-i="prods"></h2><div class="grid" id="pg"></div></section>
+
+<section class="about rv" id="about"><div><b>175K</b><span data-i="s1"></span></div><div><b>99%</b><span data-i="s2"></span></div></section>
+
+<section><h2 data-i="rev"></h2><div class="rv rev"><div>⭐⭐⭐⭐⭐<p data-i="r1"></p></div><div>⭐⭐⭐⭐⭐<p data-i="r2"></p></div><div>⭐⭐⭐⭐⭐<p data-i="r3"></p></div></div></section>
+
+<section class="pay"><p data-i="pay"></p><p style="margin-top:12px;font-size:20px">VISA · Mastercard · Meeza · CIB · InstaPay</p></section>
+<footer id="contact"><p data-i="foot"></p></footer>
+
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<button class="bot" id="bt" aria-label="AI">🤖</button>
+<div class="panel" id="chat"><div class="ph"><span data-i="chat"></span><span id="x1" style="cursor:pointer">✕</span></div><div class="pb" id="msgs"></div><div class="pf"><input id="qi"><button class="btn" id="qs" style="padding:8px 14px">➤</button></div></div>
+<div class="panel" id="cartp"><div class="ph"><span data-i="cart"></span><span id="x2" style="cursor:pointer">✕</span></div><div class="pb" id="cl"></div><div class="pf" style="flex-direction:column"><b id="tot"></b><button class="btn" id="ord" data-i="order"></button></div></div>
+
+<script>
+const $=s=>document.querySelector(s),g=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}};
+const WA=g('wa','201000000000'); // غيّر الرقم من لوحة الإدارة أو هنا
+const DP=[{id:1,ar:"أريكا جلد أحمر - شامل الأصيص",en:"Areca Palm, red leather pot",p:6950,img:"images/p1.jpg"},{id:2,ar:"أريكا خريد خماسي",en:"Areca Palm, pastel pot",p:6500,img:"images/p2.jpg"},{id:3,ar:"أريكا خريد ثلاثي",en:"Areca Palm, triple",p:4950,img:"images/p3.jpg"},{id:4,ar:"أريكا أحادي جلد",en:"Single Areca, black pot",p:5200,img:"images/p4.jpg"}];
+const T={ar:{home:"الرئيسية",shop:"تسوق",about:"عن الشركة",contact:"تواصل معنا",sub:"احلم وإحنا نحقق",h1:"صنع بكل الحب واللطف من أجل بيتك",cta:"تسوق الآن",f1:"دفع آمن 100%",f1d:"جميع معاملاتك المالية محمية",f2:"شحن سريع",f2d:"نوصل لباب منزلك بأمان",f3:"تغليف بعناية",f3d:"يصلك بحالة ممتازة",f4:"خدمة بكل حب",f4d:"رضاك هو أولويتنا",prods:"منتجاتنا",add:"أضف إلى السلة",s1:"عملية شراء",s2:"رضا العملاء",rev:"ماذا يقول عملاؤنا",r1:"خدمة سريعة وتغليف ممتاز، أنصح بالتعامل معهم.",r2:"فريق متعاون وتجاوزوا توقعاتي.",r3:"شجر يشبه الطبيعي تماماً، شكراً!",pay:"نحن نقبل",foot:"© بتاع الورد - جميع الحقوق محفوظة",chat:"المساعد الذكي 🤖",hi:"أهلاً! اسألني عن الشحن أو الدفع أو الأسعار، أو كلمنا واتساب.",cart:"السلة",order:"اطلب عبر واتساب",empty:"السلة فارغة",tot:"الإجمالي",cur:"ج.م",nm:"اسمك؟",ph:"رقم هاتفك؟",lg:"EN",wam:"مرحباً، عايز أستفسر عن منتجاتكم"},
+en:{home:"Home",shop:"Shop",about:"About",contact:"Contact",sub:"Dream it, we make it",h1:"Made with love and care for your home",cta:"Shop Now",f1:"100% Secure Payment",f1d:"All your transactions are protected",f2:"Fast Shipping",f2d:"Delivered safely to your door",f3:"Careful Packaging",f3d:"Arrives in perfect condition",f4:"Service with Love",f4d:"Your satisfaction comes first",prods:"Our Products",add:"Add to Cart",s1:"Purchases",s2:"Satisfaction",rev:"What Our Customers Say",r1:"Fast service and great packaging. Highly recommend.",r2:"A helpful team that exceeded my expectations.",r3:"Looks just like real plants. Thank you!",pay:"We accept",foot:"© Bta3 El Ward - All rights reserved",chat:"Smart Assistant 🤖",hi:"Hi! Ask me about shipping, payment or prices, or chat on WhatsApp.",cart:"Cart",order:"Order via WhatsApp",empty:"Your cart is empty",tot:"Total",cur:"EGP",nm:"Your name?",ph:"Your phone?",lg:"عربي",wam:"Hello, I'd like to ask about your products"}};
+const BOT={ar:[[/شحن|توصيل/,"نوصل لكل المحافظات، ومدة التوصيل من 2 إلى 5 أيام."],[/دفع|فيزا|كاش|استلام/,"ندعم فيزا وماستركارد وميزة وإنستاباي، ومتاح الدفع عند الاستلام."],[/سعر|كام|اسعار|أسعار/,"الأسعار موضحة تحت كل منتج وتشمل الأصيص. للعروض كلمنا واتساب."],[/ضمان|استرجاع/,"نضمن وصول المنتج سليماً، وإن لم تكن راضياً سنتولى الأمر."]],en:[[/ship|deliver/,"We deliver nationwide in 2-5 days."],[/pay|visa|cash/,"We accept Visa, Mastercard, Meeza, InstaPay and cash on delivery."],[/price|cost|much/,"Prices are shown under each product and include the pot."],[/warranty|return|refund/,"We guarantee safe arrival, and will make it right if you're unhappy."]]};
+let L=g('l','ar'),P=g('pr',DP),C=g('ct',[]);
+const t=k=>T[L][k];
+function ap(){document.documentElement.lang=L;document.documentElement.dir=L=='ar'?'rtl':'ltr';
+document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t(e.dataset.i));$('#lang').textContent=t('lg');$('#qi').placeholder="...";
+$('#wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(t('wam'));
+$('#pg').innerHTML=P.map(p=>`<div class="card rv"><div class="im"><img src="${p.img||''}" alt="" onerror="this.replaceWith('🌿')"></div><div class="in"><h3>${p[L]}</h3><div class="price">${p.p.toLocaleString()} ${t('cur')}</div><button class="btn" onclick="add(${p.id})">${t('add')}</button></div></div>`).join('');
+rc();ob()}
+function ob(){const o=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('on')),{threshold:.15});document.querySelectorAll('.rv').forEach(e=>o.observe(e))}
+function add(id){const i=C.find(c=>c.id==id);i?i.q++:C.push({id,q:1});localStorage.ct=JSON.stringify(C);rc();$('#cartp').classList.add('open')}
+function rc(){$('#cc').textContent=C.reduce((a,c)=>a+c.q,0);let s=0;
+$('#cl').innerHTML=C.length?C.map(c=>{const p=P.find(x=>x.id==c.id);if(!p)return'';s+=p.p*c.q;return`<div class="ci"><span>${p[L]} × ${c.q}</span><span>${(p.p*c.q).toLocaleString()} <a href="#" onclick="rm(${c.id});return false">🗑</a></span></div>`}).join(''):`<p>${t('empty')}</p>`;
+$('#tot').textContent=t('tot')+': '+s.toLocaleString()+' '+t('cur');return s}
+function rm(id){C=C.filter(c=>c.id!=id);localStorage.ct=JSON.stringify(C);rc()}
+$('#ord').onclick=()=>{if(!C.length)return;const n=prompt(t('nm')),ph=prompt(t('ph'));if(!n||!ph)return;
+const items=C.map(c=>{const p=P.find(x=>x.id==c.id);return{n:p.ar,q:c.q,p:p.p}}),tot=rc(),o=g('or',[]);
+o.push({id:Date.now(),name:n,phone:ph,items,total:tot,st:'new',d:new Date().toLocaleString()});localStorage.or=JSON.stringify(o);
+const msg=`🌿 طلب جديد\n${n} - ${ph}\n`+items.map(i=>`• ${i.n} × ${i.q}`).join('\n')+`\nالإجمالي: ${tot}`;
+window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');C=[];localStorage.ct='[]';rc();$('#cartp').classList.remove('open')};
+function say(x,c){const d=document.createElement('div');d.className='m '+c;d.textContent=x;$('#msgs').append(d);$('#msgs').scrollTop=1e9}
+function ask(){const q=$('#qi').value.trim();if(!q)return;say(q,'u');$('#qi').value='';
+const h=BOT[L].find(b=>b[0].test(q.toLowerCase()));setTimeout(()=>say(h?h[1]:(L=='ar'?"سؤال ممتاز! كلمنا واتساب ونرد عليك فوراً 💬":"Great question! Chat with us on WhatsApp for a quick reply 💬"),'b'),400)}
+$('#qs').onclick=ask;$('#qi').onkeydown=e=>e.key=='Enter'&&ask();
+$('#bt').onclick=()=>{$('#chat').classList.toggle('open');if(!$('#msgs').children.length)say(t('hi'),'b')};
+$('#x1').onclick=()=>$('#chat').classList.remove('open');$('#x2').onclick=()=>$('#cartp').classList.remove('open');$('#cb').onclick=()=>$('#cartp').classList.add('open');
+$('#lang').onclick=()=>{L=L=='ar'?'en':'ar';localStorage.l=JSON.stringify(L);$('#msgs').innerHTML='';ap()};
+ap();
+</script></body></html>
